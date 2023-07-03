@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'posts.apps.PostsConfig',
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
     'polls.apps.PollsConfig',
@@ -70,7 +71,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 

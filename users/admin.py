@@ -6,13 +6,13 @@ from django.contrib.auth.admin import UserAdmin
 # Register your models here.
 
 
-class ProfileAdmin(admin.StackedInline):
+class ProfileInline(admin.StackedInline):
     model = Profile
     con_delete = False
 
 
 class CustomUserAdmin(UserAdmin):
-    inlines = (ProfileAdmin,)
+    inlines = (ProfileInline,)
 
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)

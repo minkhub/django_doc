@@ -1,0 +1,25 @@
+{% include 'shared/navbar.html' %}
+{% load static %}
+
+{% if request.user.is_authenticated %}
+    {% if request.user == profile.user %}
+    <h1>Edit Profile</h1>
+    <br/><br/>
+
+    <div class="form-group">
+        <form method="POST" enctype="multipart/from-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn-btn-secondary">Update Profile</button>
+        </form>
+    </div>
+
+    <a href="{% url 'users:change_pw' request.user.pk %}">비밀번호 변경</a>
+
+    {% else %}
+    not correct user
+    {% endif %}
+
+{% else %}
+not logged in
+{% endif %}

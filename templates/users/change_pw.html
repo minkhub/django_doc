@@ -1,0 +1,18 @@
+{% include 'shared/navbar.html' %}
+
+{% if request.user.is_authenticated %}
+
+
+
+    <h2>{{ request.user.username }} 비밀번호 변경</h2>
+    <div class="form-group">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn-btn-secondary">Update Profile</button>
+        </form>
+    </div>
+
+    {% else %}
+    not logged in
+    {% endif %}

@@ -1,7 +1,7 @@
-{% extends "share/base.html" %}
+{% include "share/navbar.html" %}
 {% block content %}
 <div class="container my-3">
-    <form method="post" action="{% url 'users:signup' %}">
+    <form method="post" action="{% url 'users:register' %}">
         {% csrf_token %}
         {% include "form_errors.html" %}
         <div class="mb-3">
